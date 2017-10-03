@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 const twilio = require('twilio');
-const accountSid = 'ACd8e8c7de910dffeb53cb2392df840932';
-const authToken = '939af02287fe8f073d41d6af29eb07ed';
+const accountSid = 'ACCT_SID';
+const authToken = 'AUTH_TOKEN';
 const client = new twilio(accountSid, authToken);
 
-mongoose.connect('mongodb://isaac:123@ds161574.mlab.com:61574/codercamps-db', { useMongoClient: true, promiseLibrary: global.Promise });
+mongoose.connect('CONNECTION_STRING', { useMongoClient: true, promiseLibrary: global.Promise });
 let MessageSchema = new mongoose.Schema({
   groupName: String,
   phoneNumber: String,
